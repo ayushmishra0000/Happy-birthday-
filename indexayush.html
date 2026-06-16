@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday My Love ❤️</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:linear-gradient(135deg,#ff758c,#ff7eb3);
+    overflow:hidden;
+    color:white;
+    text-align:center;
+}
+
+.container{
+    max-width:800px;
+    padding:30px;
+    z-index:10;
+}
+
+h1{
+    font-size:4rem;
+    margin-bottom:15px;
+    animation: glow 2s infinite alternate;
+}
+
+@keyframes glow{
+    from{ text-shadow:0 0 10px #fff; }
+    to{ text-shadow:0 0 30px #fff,0 0 60px #ff4f81; }
+}
+
+.subtitle{
+    font-size:1.5rem;
+    margin-bottom:20px;
+}
+
+.message{
+    font-size:1.2rem;
+    line-height:1.8;
+    margin:20px 0;
+}
+
+button{
+    background:white;
+    color:#ff4f81;
+    border:none;
+    padding:15px 35px;
+    border-radius:50px;
+    font-size:1rem;
+    font-weight:bold;
+    cursor:pointer;
+    transition:.3s;
+}
+
+button:hover{
+    transform:scale(1.1);
+}
+
+.surprise{
+    display:none;
+    margin-top:25px;
+    font-size:1.3rem;
+    animation:fadeIn 1s ease;
+}
+
+@keyframes fadeIn{
+    from{opacity:0;}
+    to{opacity:1;}
+}
+
+.heart{
+    position:absolute;
+    color:white;
+    font-size:20px;
+    animation:float linear infinite;
+    opacity:.7;
+}
+
+@keyframes float{
+    from{
+        transform:translateY(100vh);
+    }
+    to{
+        transform:translateY(-100px);
+    }
+}
+
+footer{
+    margin-top:30px;
+    opacity:0.9;
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+
+    <h1>🎂 Happy Birthday ❤️</h1>
+
+    <div class="subtitle">
+        To my beautiful Girlfriend,
+        <br>
+        <strong>MADHAVI</strong>
+    </div>
+
+    <div class="message">
+        Today is all about celebrating the most amazing person in my life.
+        Thank you for your love, your smile, your kindness, and every
+        beautiful moment we've shared together. your birthday is now not
+        just special for you but special for me also because i guess now you are a part of my life❤️
+       yk this day is special for ur parents bcz u came in their life but also THE GOD GAVE THEM THE 
+       LONGEST DAY TO ADMIRE U❤️❤️
+       
+       HAPPY BIRTHDAY TO YOU BACCHA 🎂❤️
+
+
+        <br><br>
+
+        You make every day brighter, every challenge easier,
+        and every memory more special.
+
+        <br><br>
+
+        I hope this year brings you endless happiness,
+        success, laughter, and all the love your heart can hold,
+        your presence means alot❤️❤️
+
+
+        <br><br>
+
+        ❤️ I love you more than words can express ❤️
+    </div>
+
+    <button onclick="showSurprise()">
+        Open My Surprise 🎁
+    </button>
+
+    <div class="surprise" id="surprise">
+        💖 You are my favorite person,
+        my best friend,
+        my happiness,
+        and my forever love.
+
+        <br><br>
+
+        Happy Birthday, Princess 👑❤️
+    </div>
+
+    <footer>
+        Made with ❤️ just for you
+    </footer>
+
+</div>
+
+<script>
+function showSurprise(){
+    document.getElementById("surprise").style.display="block";
+    launchConfetti();
+}
+
+function createHeart(){
+    const heart = document.createElement("div");
+    heart.classList.add("heart");
+    heart.innerHTML = "❤";
+
+    heart.style.left = Math.random()*100 + "vw";
+    heart.style.animationDuration =
+        (Math.random()*5 + 4) + "s";
+
+    heart.style.fontSize =
+        (Math.random()*25 + 15) + "px";
+
+    document.body.appendChild(heart);
+
+    setTimeout(()=>{
+        heart.remove();
+    },9000);
+}
+
+setInterval(createHeart,300);
+
+function launchConfetti(){
+    for(let i=0;i<150;i++){
+
+        const confetti=document.createElement("div");
+
+        confetti.style.position="absolute";
+        confetti.style.width="10px";
+        confetti.style.height="10px";
+
+        confetti.style.background=
+            `hsl(${Math.random()*360},100%,70%)`;
+
+        confetti.style.left=
+            Math.random()*window.innerWidth+"px";
+
+        confetti.style.top="-20px";
+
+        confetti.style.borderRadius="50%";
+
+        document.body.appendChild(confetti);
+
+        let fall=Math.random()*5+3;
+
+        confetti.animate([
+            {transform:"translateY(0px)"},
+            {transform:`translateY(${window.innerHeight+100}px)`}
+        ],{
+            duration:fall*1000,
+            easing:"linear"
+        });
+
+        setTimeout(()=>{
+            confetti.remove();
+        },fall*1000);
+    }
+}
+</script>
+
+</body>
+</html>
